@@ -55,8 +55,8 @@ class TorneoController extends Controller
     }
 
     public function getAll(){
-    $torneo = Torneo::with(['videojuego'])->get();
 
+    $torneo = Torneo::with(['videojuego','equipos'])->get();
     return response()->json([
         "data" => $torneo,
         "message" => "Consulta exitosa"
